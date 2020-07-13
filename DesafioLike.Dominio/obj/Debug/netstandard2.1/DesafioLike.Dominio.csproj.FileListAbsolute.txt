@@ -1,0 +1,9 @@
+C:\Projetos\DesafioLike\DesafioLike.Dominio\bin\Debug\netstandard2.1\DesafioLike.Dominio.deps.json
+C:\Projetos\DesafioLike\DesafioLike.Dominio\bin\Debug\netstandard2.1\DesafioLike.Dominio.dll
+C:\Projetos\DesafioLike\DesafioLike.Dominio\bin\Debug\netstandard2.1\DesafioLike.Dominio.pdb
+C:\Projetos\DesafioLike\DesafioLike.Dominio\obj\Debug\netstandard2.1\DesafioLike.Dominio.csprojAssemblyReference.cache
+C:\Projetos\DesafioLike\DesafioLike.Dominio\obj\Debug\netstandard2.1\DesafioLike.Dominio.AssemblyInfoInputs.cache
+C:\Projetos\DesafioLike\DesafioLike.Dominio\obj\Debug\netstandard2.1\DesafioLike.Dominio.AssemblyInfo.cs
+C:\Projetos\DesafioLike\DesafioLike.Dominio\obj\Debug\netstandard2.1\DesafioLike.Dominio.csproj.CoreCompileInputs.cache
+C:\Projetos\DesafioLike\DesafioLike.Dominio\obj\Debug\netstandard2.1\DesafioLike.Dominio.dll
+C:\Projetos\DesafioLike\DesafioLike.Dominio\obj\Debug\netstandard2.1\DesafioLike.Dominio.pdb
