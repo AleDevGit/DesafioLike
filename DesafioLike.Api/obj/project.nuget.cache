@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8848d0tD3LMQKVprYLSpbZ4W205xZDy5g5Z8RknyA/ZGSzbM3Pc+K7FTVm0Fh0gL7CgtHWabge4M50p1f/Z8JA==",
+  "dgSpecHash": "mIHGzUoD01mLcc7MB6Rj6+tHWBRMYwzmw1PFA/1qf9FG5wwcNPsw2esb89jq1wX0Hh8H5jYopSaW/nF9bRt3dw==",
   "success": true,
-  "projectFilePath": "c:\\Projetos\\DesafioLike\\DesafioLike.Api\\DesafioLike.Api.csproj",
+  "projectFilePath": "C:\\Projetos\\DesafioLike\\DesafioLike.Api\\DesafioLike.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Home\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\Home\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.0\\automapper.extensions.microsoft.dependencyinjection.5.0.0.nupkg.sha512",

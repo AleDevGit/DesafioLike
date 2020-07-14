@@ -14,6 +14,7 @@ namespace DesafioLike.Api.Helpers
             CreateMap<Resposta, RespostaDto>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();
             CreateMap<User, UserLoginDto>().ReverseMap();
+            CreateMap<Role, RoleDto>().ReverseMap();
         }
     }
 }

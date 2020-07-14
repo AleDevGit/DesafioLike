@@ -69,7 +69,6 @@ export class CategoriasComponent implements OnInit {
         this.categoria.ativo = false;
         this.categoriaService.cadastrarCategoria(this.categoria).subscribe(
         (novaCategoria: Categoria) => {
-          console.log(novaCategoria);
           template.hide();
           this.getCategorias();
           this.toastr.success(`Categoria: ${novaCategoria.descricao} criada com sucesso.`, ``);
@@ -79,7 +78,6 @@ export class CategoriasComponent implements OnInit {
         );
       }else{
         this.categoria = Object.assign({id: this.categoria.id}, this.registerForm.value);
-        console.log(this.categoria);
         this.categoriaService.alterarCategoria(this.categoria).subscribe(
           (novaCategoria: Categoria) => {
             template.hide();

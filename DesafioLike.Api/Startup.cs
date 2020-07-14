@@ -32,17 +32,7 @@ namespace DesafioLike.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //SqlServer
-            //services.AddDbContext<DataContext>(
-            //    x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
-            //);
-
-            //MySQL
-            //var connectionString = Configuration.GetConnectionString("QuickBuyDB");
-            //services.AddDbContext<QuickBuyContexto>(
-
-            //   x => x.UseLazyLoadingProxies().UseMySql(connectionString, m => m.MigrationsAssembly("QuickBuy.Repositorio")));
-            //Sqlite
+            
             services.AddDbContext<DataContext>(
                 x => x.UseSqlite(Configuration.GetConnectionString("DesafioLikeConnection"))
             );
@@ -121,6 +111,7 @@ namespace DesafioLike.Api
             app.UseRouting();
 
            app.UseAuthentication();
+           app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

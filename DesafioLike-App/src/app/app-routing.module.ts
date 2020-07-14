@@ -7,6 +7,8 @@ import { UserComponent } from './user/user.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { LoginComponent } from './user/login/login.component';
 import { AuthGuard } from './auth/auth.guard';
+import { RegisterRoleComponent } from './admin/registerRole/registerRole.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,10 @@ const routes: Routes = [
     {path: 'registration', component: RegistrationComponent}
   ]
 },
+{path: 'admin', component: AdminComponent,
+children: [
+  {path: 'registerrole', component: RegisterRoleComponent, canActivate: [AuthGuard]}
+]},
 {path: 'categorias', component: CategoriasComponent, canActivate: [AuthGuard]},
 {path: 'perguntas', component: PerguntasComponent, canActivate: [AuthGuard]},
 {path: 'dashboard', component: DashboardComponent},

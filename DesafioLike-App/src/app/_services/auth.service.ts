@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {map} from 'rxjs/operators';
+import { Role } from '../_models/Role';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  baseUrl = 'http://localhost:5000/api/user/';
+  baseUrl = 'http://localhost:5000/api/admin/';
   jwtHelper = new JwtHelperService();
   decodedToken: any;
 
@@ -35,6 +36,5 @@ export class AuthService {
     const token = localStorage.getItem('token');
     return !this.jwtHelper.isTokenExpired(token);
   }
-
 
 }

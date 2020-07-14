@@ -9,7 +9,7 @@ namespace DesafioLike.Dominio.Identity
         public string CPF { get; set; }
         public int AnoNasc { get; set; } 
         public Sexo Sexo { get; set; } 
-         public string FullName {get; set;}
+        public string FullName {get; set;}
         public List<UserRole> UserRoles { get; set; }
     }
 }

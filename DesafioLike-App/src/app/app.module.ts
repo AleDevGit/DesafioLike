@@ -18,9 +18,11 @@ import { NavComponent } from './nav/nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PerguntasComponent } from './perguntas/perguntas.component';
-import {TituloComponent} from './_shared/titulo/titulo.component';
+import { TituloComponent } from './_shared/titulo/titulo.component';
 import { UserComponent } from './user/user.component';
 import { RegistrationComponent } from './user/registration/registration.component';
+import { AdminComponent } from './admin/admin.component';
+import { RegisterRoleComponent } from './admin/registerRole/registerRole.component';
 import { LoginComponent } from './user/login/login.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 
@@ -37,6 +39,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
       TituloComponent,
       UserComponent,
       RegistrationComponent,
+      AdminComponent,
+      RegisterRoleComponent,
       LoginComponent
    ],
    imports: [

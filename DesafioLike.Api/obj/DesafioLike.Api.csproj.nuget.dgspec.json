@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projetos\\DesafioLike\\DesafioLike.Api\\DesafioLike.Api.csproj": {}
+    "C:\\Projetos\\DesafioLike\\DesafioLike.Api\\DesafioLike.Api.csproj": {}
   },
   "projects": {
-    "c:\\Projetos\\DesafioLike\\DesafioLike.Api\\DesafioLike.Api.csproj": {
+    "C:\\Projetos\\DesafioLike\\DesafioLike.Api\\DesafioLike.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projetos\\DesafioLike\\DesafioLike.Api\\DesafioLike.Api.csproj",
+        "projectUniqueName": "C:\\Projetos\\DesafioLike\\DesafioLike.Api\\DesafioLike.Api.csproj",
         "projectName": "DesafioLike.Api",
-        "projectPath": "c:\\Projetos\\DesafioLike\\DesafioLike.Api\\DesafioLike.Api.csproj",
+        "projectPath": "C:\\Projetos\\DesafioLike\\DesafioLike.Api\\DesafioLike.Api.csproj",
         "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-        "outputPath": "c:\\Projetos\\DesafioLike\\DesafioLike.Api\\obj\\",
+        "outputPath": "C:\\Projetos\\DesafioLike\\DesafioLike.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,11 +30,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "c:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj": {
-                "projectPath": "c:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj"
+              "C:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj": {
+                "projectPath": "C:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj"
               },
-              "c:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj": {
-                "projectPath": "c:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj"
+              "C:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj": {
+                "projectPath": "C:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj"
               }
             }
           }
@@ -107,14 +107,14 @@
         }
       }
     },
-    "c:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj": {
+    "C:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj",
+        "projectUniqueName": "C:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj",
         "projectName": "DesafioLike.Dominio",
-        "projectPath": "c:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj",
+        "projectPath": "C:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj",
         "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-        "outputPath": "c:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\obj\\",
+        "outputPath": "C:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -168,14 +168,14 @@
         }
       }
     },
-    "c:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj": {
+    "C:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj",
+        "projectUniqueName": "C:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj",
         "projectName": "DesafioLike.Repositorio",
-        "projectPath": "c:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj",
+        "projectPath": "C:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj",
         "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-        "outputPath": "c:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\obj\\",
+        "outputPath": "C:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -194,8 +194,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "c:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj": {
-                "projectPath": "c:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj"
+              "C:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj": {
+                "projectPath": "C:\\Projetos\\DesafioLike\\DesafioLike.Dominio\\DesafioLike.Dominio.csproj"
               }
             }
           }
