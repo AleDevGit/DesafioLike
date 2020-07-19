@@ -1,0 +1,89 @@
+<app-titulo [titulo]="titulo" class="container mt-4"></app-titulo>
+
+<div class="card border-dark text-black bg-secondary mb-3" >
+  <div class="card-header">
+    <form [formGroup]="registerForm">
+      <div class="form-row">
+        <div class="form-group col-md-12 mt-4">
+          <div class="float-left col-md-2">
+            <h4 class="label-control">{{regra.name}}</h4>
+          </div>
+          <div class="text-right float-right ml-auto">
+            <button type="button" class="btn btn-outline-primary" (click)="cadastrarUsuario()">
+              <i class="fa fa-plus-circle"></i>&nbsp;
+              Permissão
+            </button>
+          </div>
+          <div class="text-right float-right col-md-8">
+            <input [(ngModel)]="selectedValue" [typeahead]="listaUsuarios" formControlName="fullName"
+            typeaheadOptionField="fullName" [typeaheadScrollable]="true" placeholder="Nome do usuário"
+            (typeaheadOnSelect)="onSelect($event)" class="form-control">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="card-body">
+      
+    
+
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>CPF</th>
+          <th>Usuário</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="usuariosRegras && usuariosRegras?.length" >
+        <tr *ngFor="let usuario of usuariosRegras">
+          <td style="width: 10%;">{{usuario.id}}</td>
+          <td style="width: 90%;">{{usuario.fullName}} ({{usuario.email}})</td>
+          <td style="width: 10%;">
+            <div class="btn-group">
+              <button class="btn btn-sm btn-danger" tooltip="Retirar Permissão" 
+              (click)="excluirPermissao(usuario, regra, confirm)">
+                <i class="fa fa-eraser"></i>
+              </button>
+            </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="! usuariosRegras?.length">
+      <tr>
+        <td colspan="7" class="text-center">
+          <h4>
+            Nenhum usuário encontrado para essa regra!
+          </h4>
+        </td>
+      </tr>
+    </tfoot>
+    </table>
+  </div>
+</div>
+
+<div bsModal #confirm="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">
+          Deletando Regra
+        </h4>
+        <button type="button" class="close pull-right" (click)="confirm.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{bodyDeletarUsuarioRegra}}</p>
+      </div>
+      <div class="modal-footer btn-group d-flex">
+        <button type="button" class="btn btn-outline-primary" (click)="confirm.hide()">
+          CENCELAR
+        </button>
+        <button type="button" class="btn btn-outline-danger" (click)="confirmeExclusao(confirm)">
+          DELETAR
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

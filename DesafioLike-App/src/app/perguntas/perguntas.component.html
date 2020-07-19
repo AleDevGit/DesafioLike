@@ -1,14 +1,15 @@
-<app-titulo [titulo]="titulo"></app-titulo>
+
+<app-titulo [titulo]="titulo" class="container mt-4"></app-titulo>
 
 <div class="d-flex">
-  <div class="form-inline mr-auto">
+  <div class="form-inline mr-auto col-md-8">
     <div class="form-group mb-2">
       <input type="text" class="form-control"
       placeholder="buscar" [(ngModel)]="filtroLista"/>
     </div>
   </div>
   <div>
-    <button class="btn btn-outline-primary" (click)="novaPergunta(template)">
+    <button class="btn btn-default" (click)="novaPergunta(template)">
       <i class="fa fa-plus-circle"></i>&nbsp;
       Nova Pergunta
     </button>

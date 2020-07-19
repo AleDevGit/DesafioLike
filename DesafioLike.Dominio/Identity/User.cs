@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DesafioLike.Dominio.Entidades;
 using DesafioLike.Dominio.Enum;
 using Microsoft.AspNetCore.Identity;
 
@@ -11,5 +12,6 @@ namespace DesafioLike.Dominio.Identity
         public Sexo Sexo { get; set; } 
         public string FullName {get; set;}
         public List<UserRole> UserRoles { get; set; }
+        public List<Resposta> Respostas { get; set; }
     }
 }

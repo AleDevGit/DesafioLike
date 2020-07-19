@@ -65,11 +65,9 @@ export class PerguntasComponent implements OnInit {
           this.pergunta.categoriaId =   this.registerForm.get('categoria').value;
           this.pergunta.opcao1 = this.registerForm.get('opcaoRespostaA').value;
           this.pergunta.opcao2 = this.registerForm.get('opcaoRespostaB').value;
-          console.log(this.pergunta);
           this.pergunta.ativo = false;
           this.perguntaService.cadastrarPergunta(this.pergunta).subscribe(
           (novaPergunta: Pergunta) => {
-            console.log(novaPergunta);
             template.hide();
             this.getPerguntas();
             this.toastr.success(`Pergunta: ${novaPergunta.descricao} criada com sucesso.`, ``);
@@ -79,7 +77,6 @@ export class PerguntasComponent implements OnInit {
           );
         }else{
           this.pergunta = Object.assign({id: this.pergunta.id}, this.registerForm.value);
-          console.log(this.pergunta);
           this.perguntaService.alterarPergunta(this.pergunta).subscribe(
             (novaPergunta: Pergunta) => {
               template.hide();
@@ -96,7 +93,6 @@ export class PerguntasComponent implements OnInit {
     getPerguntas(){
       this.perguntaService.getPerguntas().subscribe(
         (umPerguntas: Pergunta[]) => {
-          console.log(umPerguntas);
           this.perguntas = umPerguntas;
           this.perguntasfiltradas = umPerguntas;
         }, error => {
@@ -142,7 +138,6 @@ export class PerguntasComponent implements OnInit {
     }
     editarStatusPergunta(template: any){
       this.pergunta = Object.assign({id: this.pergunta.id}, this.registerForm.value);
-      console.log(this.pergunta);
       this.perguntaService.alterarPergunta(this.pergunta).subscribe(
         (novaPergunta: Pergunta) => {
           template.hide();

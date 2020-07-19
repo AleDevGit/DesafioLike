@@ -1,0 +1,10 @@
+label{
+    text-shadow: -1px -1px 0 hsl(60, 0%, 40%),
+    -2px -2px 1px hsl(60, 0%, 40%),
+    -2px -2px 2px hsl(60, 0%, 40%);
+}
+
+.lead{
+   font-weight: 500;
+}
+

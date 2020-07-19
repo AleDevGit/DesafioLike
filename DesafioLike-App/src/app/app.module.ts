@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TooltipModule} from 'ngx-bootstrap/tooltip';
 import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ModalModule} from 'ngx-bootstrap/modal/';
@@ -22,9 +23,14 @@ import { TituloComponent } from './_shared/titulo/titulo.component';
 import { UserComponent } from './user/user.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { AdminComponent } from './admin/admin.component';
+import { UserroleComponent } from './admin/userrole/userrole.component';
 import { RegisterRoleComponent } from './admin/registerRole/registerRole.component';
 import { LoginComponent } from './user/login/login.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { FooterComponent } from './footer/footer.component';
+import { OpinioesComponent } from './opinioes/opinioes.component';
+import { PerguntaService } from './_services/pergunta.service';
+import { RespostaService } from './_services/resposta.service';
 
 
 
@@ -41,7 +47,10 @@ import { AuthInterceptor } from './auth/auth.interceptor';
       RegistrationComponent,
       AdminComponent,
       RegisterRoleComponent,
-      LoginComponent
+      LoginComponent,
+      UserroleComponent,
+      FooterComponent,
+      OpinioesComponent
    ],
    imports: [
       BrowserModule,
@@ -49,19 +58,20 @@ import { AuthInterceptor } from './auth/auth.interceptor';
       BsDropdownModule.forRoot(),
       TooltipModule.forRoot(),
       ModalModule.forRoot(),
-      ToastrModule.forRoot({
-         timeOut: 3000,
-         preventDuplicates: true,
-         progressBar: true
-      }),
+      ToastrModule.forRoot(),
+      BrowserAnimationsModule,
+      ToastrModule.forRoot(),
       AppRoutingModule,
+      TypeaheadModule.forRoot(),
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule,
       BsDatepickerModule.forRoot()
    ],
    providers: [
+      PerguntaService,
       CategoriaService,
+      RespostaService,
       {
          provide: HTTP_INTERCEPTORS,
          useClass: AuthInterceptor,

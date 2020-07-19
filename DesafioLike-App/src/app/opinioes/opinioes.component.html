@@ -1,0 +1,13 @@
+<div class="container container mt-4" style="margin-bottom: 148px !important;" *ngIf="pergunta">
+  <div class="pergunta">
+    <span>{{pergunta.descricao}}</span>
+  </div>
+  <div class="form-group">
+    <div class="opcao" (click)="OpcaoEscolhida(pergunta, pergunta.opcao1)">
+      <span>{{pergunta.opcao1}}</span>
+    </div>
+    <div class="opcao" (click)="OpcaoEscolhida(pergunta, pergunta.opcao2)">
+      <span>{{pergunta.opcao2}}</span>
+    </div>
+  </div>
+</div>

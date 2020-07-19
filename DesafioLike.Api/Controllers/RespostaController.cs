@@ -1,5 +1,7 @@
 using System;
 using System.Threading.Tasks;
+using AutoMapper;
+using DesafioLike.Api.Dtos;
 using DesafioLike.Dominio.Entidades;
 using DesafioLike.Dominio.IRepositorios;
 using Microsoft.AspNetCore.Http;
@@ -12,8 +14,10 @@ namespace DesafioLike.Api.Controllers
     public class RespostaController  : ControllerBase
     {
          private readonly IRespostaRepositorio _respostaRepositorio;
-        public RespostaController(IRespostaRepositorio respostaRepositorio)
-        {
+         public  readonly IMapper _mapper;
+        public RespostaController(IRespostaRepositorio respostaRepositorio, IMapper mapper)
+        { 
+            _mapper = mapper;
             _respostaRepositorio = respostaRepositorio;
         }
         
@@ -32,26 +36,20 @@ namespace DesafioLike.Api.Controllers
             }
         }
 
-        
-
-
-
-
         ///Adicionar uma Resposta
         [Route("v1/adicionar")]
         [HttpPost]
-        public IActionResult Adicionar(Resposta resposta){
+        public IActionResult Adicionar(RespostaDto respostaModel){
             try{
+                var resposta = _mapper.Map<Resposta>(respostaModel);
                 _respostaRepositorio.Adicionar(resposta);
-                
-                return Created($"api/resposta/v1/obterporid/{resposta.Id}", resposta);
+                respostaModel = _mapper.Map<RespostaDto>(resposta);
+                return Created($"v1/obterporperguntaid/{resposta.PerguntaId}", respostaModel);
             }
             catch(System.Exception)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falou");
-
             }
-            
         }
 
         ///Atualizar uma Resposta

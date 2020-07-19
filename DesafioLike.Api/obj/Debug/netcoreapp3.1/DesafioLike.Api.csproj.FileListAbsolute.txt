@@ -19,6 +19,7 @@ C:\Projetos\DesafioLike\DesafioLike.Api\bin\Debug\netcoreapp3.1\Microsoft.Data.S
 C:\Projetos\DesafioLike\DesafioLike.Api\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Projetos\DesafioLike\DesafioLike.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Projetos\DesafioLike\DesafioLike.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Projetos\DesafioLike\DesafioLike.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Projetos\DesafioLike\DesafioLike.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Projetos\DesafioLike\DesafioLike.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\Projetos\DesafioLike\DesafioLike.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -80,4 +81,3 @@ C:\Projetos\DesafioLike\DesafioLike.Api\obj\Debug\netcoreapp3.1\staticwebassets\
 C:\Projetos\DesafioLike\DesafioLike.Api\obj\Debug\netcoreapp3.1\DesafioLike.Api.dll
 C:\Projetos\DesafioLike\DesafioLike.Api\obj\Debug\netcoreapp3.1\DesafioLike.Api.pdb
 C:\Projetos\DesafioLike\DesafioLike.Api\obj\Debug\netcoreapp3.1\DesafioLike.Api.genruntimeconfig.cache
-C:\Projetos\DesafioLike\DesafioLike.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll

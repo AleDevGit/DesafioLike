@@ -15,9 +15,10 @@ export class RegisterRoleComponent implements OnInit {
   registerForm: FormGroup;
   regras: Role[];
   regra: Role;
-  umFiltroLista = '';
+  
   regrasfiltradas: Role[];
   modoSalvar = 'post';
+  bodyDeletarRegra = '';
 
   constructor(public fb: FormBuilder, private toastr: ToastrService,
               private adminService: AdminService, public router: Router) { }
@@ -27,6 +28,7 @@ export class RegisterRoleComponent implements OnInit {
     this.getRegras();
   }
 
+  umFiltroLista = '';
   get filtroLista(): string{
     return this.umFiltroLista;
   }
@@ -53,9 +55,8 @@ export class RegisterRoleComponent implements OnInit {
   }
 
   getRegras(){
-    this.adminService.listarRegras().subscribe(
+    this.adminService.listarRegra().subscribe(
       (umRegras: Role[]) => {
-        console.log(umRegras);
         this.regras = umRegras;
         this.regrasfiltradas = umRegras;
       }, error => {
@@ -72,7 +73,7 @@ export class RegisterRoleComponent implements OnInit {
     if (this.registerForm.valid){
       if (this.modoSalvar === 'post'){
         this.regra = Object.assign({}, this.registerForm.value);
-        this.adminService.cadastrarRole(this.regra).subscribe(
+        this.adminService.cadastrarRegra(this.regra).subscribe(
           () => {
             template.hide();
             this.getRegras();
@@ -94,7 +95,7 @@ export class RegisterRoleComponent implements OnInit {
         );
       } else {
         this.regra = Object.assign({id: this.regra.id}, this.registerForm.value);
-        this.adminService.alterarRole(this.regra).subscribe(
+        this.adminService.alterarRegra(this.regra).subscribe(
           () => {
             template.hide();
             this.getRegras();
@@ -120,11 +121,39 @@ export class RegisterRoleComponent implements OnInit {
   }
 
   editarRegra(regra: Role, template: any){
-    console.log(regra);
-    this.modoSalvar = 'put';
+     this.modoSalvar = 'put';
     this.openModal(template);
     this.regra = regra;
     this.registerForm.patchValue(regra);
   }
+
+  excluirRegra(regra: Role, template: any) {
+    this.openModal(template);
+    this.regra = regra;
+    this.bodyDeletarRegra = `Tem certeza que deseja excluir a Regra: ${regra.name}, Código: ${regra.id}`;
+  }
+
+  confirmeDelete(template: any) {
+    this.adminService.excluirRegra(this.regra.id).subscribe(
+      () => {
+        template.hide();
+        this.getRegras();
+        this.toastr.success('Deletado com Sucesso');
+      }, error => {
+        const erro = error.error;
+        erro.forEach(element => {
+          switch (element.code){
+            case 'DuplicateUserName':
+              this.toastr.error('Cadastro duplicado');
+              break;
+            default:
+              this.toastr.error(`Erro no cadastro! CODE: ${element.code}`);
+              break;
+          }
+        });
+      }
+    );
+  }
+
 
 }

@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   titulo = 'Login';
   model: any = {};
 
-  constructor( private toastr: ToastrService, private authService: AuthService, public router: Router) { }
+  constructor(private toastr: ToastrService, private authService: AuthService, public router: Router) { }
 
   ngOnInit() {
     if (localStorage.getItem('token') !== null){
@@ -24,13 +24,11 @@ export class LoginComponent implements OnInit {
   login(){
      this.authService.login(this.model).subscribe(
       () => {
-        this.router.navigate(['/dashboard']);
-        this.toastr.success('Logado com sucesso');
+        this.router.navigate(['/opinioes']);
       },
       error => {
         this.toastr.error('Falha na autenticação');
       }
     );
   }
-
 }

@@ -26,7 +26,9 @@ namespace DesafioLike.Repositorio.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
@@ -73,9 +75,14 @@ namespace DesafioLike.Repositorio.Migrations
                     b.Property<string>("RespostaOpcao")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PerguntaId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Respostas");
                 });
@@ -295,6 +302,10 @@ namespace DesafioLike.Repositorio.Migrations
                     b.HasOne("DesafioLike.Dominio.Entidades.Pergunta", null)
                         .WithMany("Respostas")
                         .HasForeignKey("PerguntaId");
+
+                    b.HasOne("DesafioLike.Dominio.Identity.User", null)
+                        .WithMany("Respostas")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("DesafioLike.Dominio.Identity.UserRole", b =>

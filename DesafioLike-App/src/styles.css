@@ -1,9 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
-@import'../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+@import '../node_modules/bootswatch/dist/lumen/bootstrap.min.css';
 
 #toast-container > div{
     opacity: 1;
     margin-top: 15%;
+}
+.form-control{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.img-thumbnail{
+    max-width: 80%;
+    
+}
+
+html, body {
+    min-height: 100%;
+    margin: 0px;
+}
+.BlocoPrincipal {
+    min-height: 100%;
+    padding-right: 41px;
+    padding-left: 85px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 92%;
+}
+
+body{
+    background-image: linear-gradient(to right, #2aaaf4, #98b8fc);
+    font-size: 1.000rem;
+    color:#ffffff !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 700;
+    min-height: 100%;
+    font-family: "Segoe UI","Helvetica Neue",Arial, sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
+}
+form{
+    border-color: transparent;
+}
+.bg-dark {
+    background-color: transparent !important;
+    border-color: transparent;
+}
+.bd-masthead h1 {
+    font-size: 3.200rem;
+    line-height: 1;
+    text-shadow: 0 4px 8px 0 rgba(3, 3, 3, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+.lead {
+    font-size: 1.5rem;
+    font-weight: 310;
+}
+
+#footer .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 10vh;
+    /* padding-right: 70px; */
+}
+#footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+}
+.footer-bar {
+    background-color: black!important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn-default{
+    background-color: #c3c3c3 !important;
+    border-color:  #afafaf;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.navbar{
+    border-style: none !important;
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Sg6h+yCfgE5tAGdTKiS+Cpl4ZEodOKW6XCD1Vbn3LZWLmVlRJq5zgBdkM/+aK01C154pBMIZHpP5CRdxuspxsw==",
+  "dgSpecHash": "icC1A2HwKn2eK6ue3cHHIf4wILWJBw19uphFWAhv6uNk+t6RXT4m8AuiW360zPpUHrEilFn49lemEpc9xBGzAw==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj",
+  "projectFilePath": "c:\\Projetos\\DesafioLike\\DesafioLike.Repositorio\\DesafioLike.Repositorio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Home\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.0\\microsoft.aspnetcore.cryptography.internal.3.1.0.nupkg.sha512",
     "C:\\Users\\Home\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.0\\microsoft.aspnetcore.cryptography.keyderivation.3.1.0.nupkg.sha512",

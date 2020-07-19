@@ -9,7 +9,7 @@ import { Role } from '../_models/Role';
 })
 export class AuthService {
 
-  baseUrl = 'http://localhost:5000/api/admin/';
+  baseUrl = 'http://localhost:5000/api/user/';
   jwtHelper = new JwtHelperService();
   decodedToken: any;
 

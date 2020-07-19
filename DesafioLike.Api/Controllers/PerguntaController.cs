@@ -21,72 +21,65 @@ namespace DesafioLike.Api.Controllers
             _perguntaRepositorio = perguntaRepositorio;
         }
 
+        ///<summary>
         ///Busca de Todas as Perguntas
+        ///</summary>
+        [Authorize(Roles = "Admin, Operador")]
         [Route("v1/obtertodos")]
         [HttpGet]
         public async Task<IActionResult> Obtertodos(){
             try{
                 var results = await _perguntaRepositorio.GetAllPerguntaAsync();
-                return Ok(results);
+                var resultsPergunta = _mapper.Map<PerguntaDto[]>(results);
+                return Ok(resultsPergunta);
             }
             catch(System.Exception)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falou");
-
             }
         }
 
+        ///<summary>
         ///Busca das perguntas de uma Categoria
+        ///</summary>
+        [Authorize(Roles = "Admin, Operador")]
         [Route("v1/obterporcategoriaid/{CategoriaId}")]
         [HttpGet]
         public async Task<IActionResult> ObterPorCategoriaId(int CategoriaId){
             try{
                 var results = await _perguntaRepositorio.ObterPorCategoriaId(CategoriaId);
-                return Ok(results);
+                var resultsPergunta = _mapper.Map<PerguntaDto[]>(results);
+                return Ok(resultsPergunta);
             }
             catch(System.Exception)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falou");
-
             }
         }
 
+        ///<summary>
         ///Busca de pergunta por Id da pergunta
+        ///</summary>
+        [Authorize(Roles = "Admin, Operador")]
         [Route("v1/obterporid/{PerguntaId}")]
         [HttpGet]
         public async Task<IActionResult> ObterPorId(int PerguntaId){
             try{
                 var results = await _perguntaRepositorio.ObterPorPerguntaId(PerguntaId);
+                var resultsPergunta = _mapper.Map<PerguntaDto[]>(results);
                 return Ok(results);
             }
             catch(System.Exception)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falou");
-
             }
         }
-        /*
-        ///Busca das perguntas de uma Categoria não Respondidas
-        [Route("v1/obterporcategoriaid/{categoriaid}/")]
-        [HttpGet]
-        public IActionResult ObterPorCategoriaId(int CategoriaId){
-            try{
-                var results = _perguntaRepositorio.ObterPorCategoriaId(CategoriaId);
-                return Ok(results);
-            }
-            catch(System.Exception)
-            {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falou");
-
-            }
-        }
-*/
         
         ///Adicionar uma Pergunta
+        [Authorize(Roles = "Admin, Operador")]
         [Route("v1/adicionar")]
         [HttpPost]
-        [AllowAnonymous]
-        public IActionResult Adicionar(Pergunta perguntaModel){
+        public IActionResult Adicionar(PerguntaDto perguntaModel){
             try{
                 var pergunta = _mapper.Map<Pergunta>(perguntaModel);
                 _perguntaRepositorio.Adicionar(pergunta);
@@ -95,27 +88,40 @@ namespace DesafioLike.Api.Controllers
             catch(System.Exception)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falou");
-
             }
-            
         }
 
         ///Atualizar uma Pergunta
-        [Route("v1/atualizar")]
+        [Authorize(Roles = "Admin, Operador")]
+        [Route("v1/atualizar/{PerguntaId}")]
         [HttpPost]
-        public IActionResult Atualizar(Pergunta pergunta){
+        public IActionResult Atualizar(int PerguntaId, PerguntaDto perguntaModel){
             try{
+                var pergunta =  _perguntaRepositorio.ObterPorId(PerguntaId).Result;
+                if (pergunta == null) return NotFound();
+
                 _perguntaRepositorio.Atualizar(pergunta);
-                
-                return Created($"api/pergunta/v1/obterporid/{pergunta.Id}", pergunta);
+                var result = _mapper.Map<PerguntaDto>(pergunta);
+                return Created($"api/pergunta/v1/obterporid/{result.Id}", result);
             }
             catch(System.Exception)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falou");
-
             }
-            
+        }
+
+        [Route("v1/obterpergunta/{Id}")]
+        [HttpGet]
+        public async Task<IActionResult> obterpergunta(int Id){
+            try{
+                var results = await _perguntaRepositorio.ObterProximaPergunta(Id);
+                var result = _mapper.Map<PerguntaDto>(results);
+                return Ok(result);
+            }
+            catch(System.Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falou");
+            }
         }
     }
-
 }

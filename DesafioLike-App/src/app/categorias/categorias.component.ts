@@ -108,7 +108,7 @@ export class CategoriasComponent implements OnInit {
     this.registerForm.patchValue(categoria);
   }
 
-  novoEvento(template: any){
+  novaCategoria(template: any){
     this.modoSalvar = 'post';
     this.openModal(template);
   }
@@ -128,7 +128,6 @@ export class CategoriasComponent implements OnInit {
   }
   editarStatusCategoria(template: any){
     this.categoria = Object.assign({id: this.categoria.id}, this.registerForm.value);
-    console.log(this.categoria);
     this.categoriaService.alterarCategoria(this.categoria).subscribe(
       (novaCategoria: Categoria) => {
         template.hide();

@@ -76,7 +76,10 @@ namespace DesafioLike.Api.Controllers
                 var result = await _signInManager.CheckPasswordSignInAsync(user, userLoginDto.Password, false);
                 if(result.Succeeded){
                     var appUser = await _userManager.Users.FirstOrDefaultAsync(u =>u.NormalizedEmail == userLoginDto.Email.ToUpper());
+                    var claims = await _userManager.GetClaimsAsync(user);
+
                     var userToReturn = _mapper.Map<UserLoginDto>(appUser);
+
                     return Ok(new{
                         token = GenerateJWToken(appUser).Result,
                         user = userToReturn
@@ -97,11 +100,15 @@ namespace DesafioLike.Api.Controllers
         {
             var claims = new List<Claim>{
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Email, user.Email)
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Name, user.FullName),
+                
+                
             };
             var roles = await _userManager.GetRolesAsync(user);
             foreach (var role in roles)
             {
+
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
 

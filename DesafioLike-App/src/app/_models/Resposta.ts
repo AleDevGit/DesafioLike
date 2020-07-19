@@ -4,6 +4,6 @@ import { Pergunta } from './Pergunta';
 export interface Resposta {
     id: number;
     perguntaId: number;
-    usuarioId: number;
+    UserId: number;
     respostaOpcao: string;
 }

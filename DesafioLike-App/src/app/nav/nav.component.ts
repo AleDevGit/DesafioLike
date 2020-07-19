@@ -11,9 +11,27 @@ import { User } from '../_models/User';
 })
 export class NavComponent implements OnInit {
   name = '';
+  _admin = false;
+  _operador = false;
   constructor(private toastr: ToastrService, public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
+
+  }
+  isAdmin(){
+    return this._admin;
+  }
+  isOperador(){
+    if (this._admin){
+      this.buscarRegras();
+      return this._operador = this._admin;
+    }else{
+      this.buscarRegras();
+       return this._operador;
+    }
+  }
+  showMenu() {
+    return this.router.url !== '/dashboard';
   }
 
   nomeLogado(){
@@ -24,18 +42,41 @@ export class NavComponent implements OnInit {
     this.nomeLogado();
     return this.authService.loggedIn();
   }
-  entrar(){
-    this.router.navigate(['/user/login']);
+
+  buscarRegras(){
+    if (localStorage.getItem('token') !== null){
+      const jwt = localStorage.getItem('token');
+      const jwtData = jwt.split('.')[1];
+      const decodedJwtJsonData = window.atob(jwtData);
+      const decodedJwtData = JSON.parse(decodedJwtJsonData);
+      const roles = decodedJwtData.role;
+      this._admin = false;
+      this._operador = false;
+      if (roles !== undefined){
+        if (roles.includes('Admin')){
+          this._admin = true;
+          this._operador = true;
+        }else if (roles.includes('Operador')){
+          this._operador = true;
+        }
+      }
+    }else{
+      this._admin = false;
+      this._operador = false;
+    }
   }
 
   userName() {
+    if (sessionStorage.getItem('username') === null){
+      localStorage.removeItem('token');
+      this.router.navigate(['/dashboard']);
+    }
     return sessionStorage.getItem('username');
   }
 
   logout(){
     localStorage.removeItem('token');
-    localStorage.removeItem('tokenName');
-    this.toastr.show('Log Out');
+    sessionStorage.removeItem('username');
     this.router.navigate(['/dashboard']);
   }
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DesafioLike.Dominio.Entidades;
@@ -38,6 +39,22 @@ namespace DesafioLike.Repositorio.Repositorios
             
             return await query.ToArrayAsync(); 
         }
+        public async Task<Pergunta> ObterProximaPergunta(int Id)
+        {
+            // int[] idsPerguntasRespondidas;
+
+            Pergunta pergunta = new Pergunta();
+            var perguntasRespondidas = DataContext.Respostas.Where(x=>x.UserId == Id).ToList();
+            if(perguntasRespondidas != null){
+                var idsPerguntasRespondidas = perguntasRespondidas.Select(x=>x.PerguntaId).ToArray(); 
+//                idsPerguntasRespondidas = perguntasRespondidas?.Select(x => x.PerguntaId).ToArray();
+                pergunta = await DataContext.Perguntas.Where(x => !idsPerguntasRespondidas.Contains(x.Id)).FirstOrDefaultAsync();
+            }else{
+                pergunta = await DataContext.Perguntas.FirstOrDefaultAsync();
+            }
+            return pergunta;
+        }
+        
     }
     
 }
