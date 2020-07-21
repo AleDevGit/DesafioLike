@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ModalModule} from 'ngx-bootstrap/modal/';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { CategoriaService } from './_services/categoria.service';
 
@@ -66,6 +67,7 @@ import { RespostaService } from './_services/resposta.service';
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule,
+      NgxPaginationModule,
       BsDatepickerModule.forRoot()
    ],
    providers: [

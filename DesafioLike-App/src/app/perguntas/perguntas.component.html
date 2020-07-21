@@ -28,7 +28,10 @@
     </tr>
   </thead>
   <tbody *ngIf="perguntas && perguntas?.length" >
-    <tr *ngFor="let pergunta of perguntasfiltradas">
+    <tr *ngFor="let pergunta of perguntasfiltradas | paginate: {id: 'foo',
+    itemsPerPage: 4,
+    currentPage: page,
+    totalItems: totalRecords}">
       <td>{{pergunta.id}}</td>
       <td>{{pergunta.categoriaId}}</td>
       <td>{{pergunta.descricao}}</td>
@@ -71,7 +74,20 @@
   </tr>
 </tfoot>
 </table>
-
+<div class="text-right">
+  <pagination-controls  id="foo"
+                      (pageChange)="page = $event"
+                       maxSize="9"
+                      directionLinks="true"
+                      autoHide="true"
+                      responsive="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+</pagination-controls>
+</div>
 <div bsModal #template="bs-modal" class="modal fade" tabindex="-1"
 role="dialog" aria-labelledby="dialog-sizes-name1">
 <div class="modal-dialog modal-lg">

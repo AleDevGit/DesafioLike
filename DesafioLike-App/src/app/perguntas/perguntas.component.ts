@@ -13,6 +13,8 @@ import { Categoria } from '../_models/Categoria';
   styleUrls: ['./perguntas.component.css']
 })
 export class PerguntasComponent implements OnInit {
+  page = 1;
+  totalRecords: number;
   titulo = 'Perguntas';
   perguntas: Pergunta[];
   categorias: Categoria[];

@@ -16,7 +16,7 @@ export class NavComponent implements OnInit {
   constructor(private toastr: ToastrService, public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
-
+    this.userName();
   }
   isAdmin(){
     return this._admin;
@@ -39,7 +39,7 @@ export class NavComponent implements OnInit {
   }
 
   loggedIn(){
-    this.nomeLogado();
+    console.log(this.authService.loggedIn());
     return this.authService.loggedIn();
   }
 
